@@ -11,7 +11,7 @@ import pickle
 import os
 ###############################
 BASE_DIR = os.path.dirname(__file__)  # Current directory where Bandass.py exists
-IMAGE_DIR = os.path.join(BASE_DIR, "images")  # Set the path to the images directory
+# IMAGE_DIR = os.path.join(BASE_DIR, "images")  # Set the path to the images directory !NOT NEEDED
 ANALYSIS_IMAGE_DIR = os.path.join(r"E:\\DEPI_TRAFFIC_PROJECT\\final\\DEPI_GP\\GUI\\analysis_images")  # Set the path to the images directory
 
 ################################
@@ -92,13 +92,13 @@ def Page_about_data():
     st.write("## Data Analysis and Visualization ")
     st.write("We have performed various statistical analysis and visualizations to help you gain insights into the data")
     st.write("### some of Data art")
-    image = load_image(os.path.join(IMAGE_DIR, "correlation.png"))
+    image = load_image(os.path.join(ANALYSIS_IMAGE_DIR, "correlation.png"))
     if image is not None:  # Only display if the image was loaded successfully
         st.image(image)
-    image = load_image(os.path.join(IMAGE_DIR, "HeatmapofAccidentSeveritybyRoadSurface.png"))
+    image = load_image(os.path.join(ANALYSIS_IMAGE_DIR, "HeatmapofAccidentSeveritybyRoadSurface.png"))
     if image is not None:  # Only display if the image was loaded successfully
         st.image(image)
-    image = load_image(os.path.join(IMAGE_DIR, "urban_vs_rural.png"))  # Load the image
+    image = load_image(os.path.join(ANALYSIS_IMAGE_DIR, "urban_vs_rural.png"))  # Load the image
     if image is not None:  # Only display if the image was loaded successfully
         st.image(image)
 
