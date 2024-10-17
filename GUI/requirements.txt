@@ -1,14 +1,17 @@
-nbformat == 5.10.4
-streamlit == 1.32.0 
-scikit-learn == 1.4.2 
-Pillow == 10.4.0
-numpy == 1.26.0
-pandas == 2.2.2
-matplotlib == 3.8.4
-seaborn == 0.13.2
-openpyxl == 3.1.2
-plotly == 5.23.0
-nbconvert == 7.10.0
-imbalanced-learn == 0.12.4
-xgboost == 2.1.1
-collections == 4.5.0-M2
+# Your package requirements
+nbformat==5.10.0
+streamlit==1.39.0
+scikit-learn==1.2.2
+Pillow==9.5.0
+numpy==1.23.5
+pandas==1.5.3
+matplotlib==3.5.3
+seaborn==0.12.2
+openpyxl==3.0.10
+plotly==5.10.0
+nbconvert==6.5.4
+imbalanced-learn==0.10.1
+xgboost==1.6.2
+altair==4.2.0
+scipy==1.9.0
+lxml[html_clean]

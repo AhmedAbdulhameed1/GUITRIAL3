@@ -9,6 +9,10 @@ from openpyxl import load_workbook
 import plotly.express as px
 from nbconvert import PythonExporter
 import pickle
+import os
+###############################
+BASE_DIR = os.path.dirname(__file__)  # Current directory where Bandass.py exists
+IMAGE_DIR = os.path.join(BASE_DIR, "images")  # Set the path to the images directory
 
 ################################
 # Main app structure
@@ -16,14 +20,20 @@ st.set_page_config(page_title="Bandaas", layout="wide", page_icon= r"GUI\images\
 
 @st.cache_resource
 def load_image(image_path):
-    return Image.open(image_path)
+    try:
+        print(f"Loading image from: {image_path}")  # Debugging line
+        return Image.open(image_path)
+    except FileNotFoundError:
+        st.error(f"Image not found: {image_path}")  # Improved error message
+        return None
 
 ################################
 @st.cache_resource
 def page_image_display():
     st.title("LOOK OUT!!!")
-    image = load_image(r"GUI\images\two_cars.png")
-    st.image(image, caption="We are a collabortive Team!")
+    image = load_image(os.path.join(IMAGE_DIR, "two_cars.png"))  # Load the image
+    if image is not None:  # Check if the image loaded successfully
+        st.image(image, caption="We are a collaborative Team!")
 
 ################################
 @st.cache_resource
