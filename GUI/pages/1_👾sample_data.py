@@ -8,13 +8,21 @@ import seaborn as sns
 import plotly.express as px
 from nbconvert import PythonExporter
 import pickle
-
+import os
+###############################
+BASE_DIR = os.path.dirname(__file__)  # Current directory where Bandass.py exists
+IMAGE_DIR = os.path.join(BASE_DIR, "images")  # Set the path to the images directory
 ################################
 # Main app structure
 st.set_page_config(page_title="Our Project Insights", layout="wide", page_icon= r"GUI\images\exploratory-analysis.png")
 ################################
 def load_image(image_path):
-    return Image.open(image_path)
+    try:
+        print(f"Loading image from: {image_path}")  # Debugging line
+        return Image.open(image_path)
+    except FileNotFoundError:
+        st.error(f"Image not found: {image_path}")  # Improved error message
+        return None
 ################################
 @st.cache_resource
 def Page_about_data():
@@ -82,11 +90,11 @@ def Page_about_data():
     st.write("## Data Analysis and Visualization ")
     st.write("We have performed various statistical analysis and visualizations to help you gain insights into the data")
     st.write("### some of Data art")
-    image = load_image(r"analysis_images\correlation.png")
+    image = load_image(os.path.join(IMAGE_DIR, "correlation.png"))
     st.image(image)
-    image = load_image(r"analysis_images\HeatmapofAccidentSeveritybyRoadSurface.png")
+    image = load_image(os.path.join(IMAGE_DIR, "HeatmapofAccidentSeveritybyRoadSurface.png"))
     st.image(image)
-    image = load_image(r"analysis_images\urban_vs_rural.png")
+    image = load_image(os.path.join(IMAGE_DIR, "urban_vs_rural.png"))  # Load the image
     st.image(image)
 
     st.write("## Data Export")
