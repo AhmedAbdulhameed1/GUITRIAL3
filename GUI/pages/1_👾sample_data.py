@@ -91,11 +91,14 @@ def Page_about_data():
     st.write("We have performed various statistical analysis and visualizations to help you gain insights into the data")
     st.write("### some of Data art")
     image = load_image(os.path.join(IMAGE_DIR, "correlation.png"))
-    st.image(image)
+    if image is not None:  # Only display if the image was loaded successfully
+        st.image(image)
     image = load_image(os.path.join(IMAGE_DIR, "HeatmapofAccidentSeveritybyRoadSurface.png"))
-    st.image(image)
+    if image is not None:  # Only display if the image was loaded successfully
+        st.image(image)
     image = load_image(os.path.join(IMAGE_DIR, "urban_vs_rural.png"))  # Load the image
-    st.image(image)
+    if image is not None:  # Only display if the image was loaded successfully
+        st.image(image)
 
     st.write("## Data Export")
     st.write("We have provided various options to export the data in various formats.")
