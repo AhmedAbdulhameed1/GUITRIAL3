@@ -14,10 +14,9 @@ BASE_DIR = os.path.dirname(__file__)  # Current directory where Bandass.py exist
 IMAGE_DIR = os.path.join(BASE_DIR, "images")  # Set the path to the images directory 
 ANALYSIS_IMAGE_DIR = os.path.join(BASE_DIR, "analysis_images")
 
-
 ################################
 # Main app structure
-st.set_page_config(page_title="Our Project Insights", layout="wide", page_icon= r"GUI\images\exploratory-analysis.png")
+st.set_page_config(page_title="Our Project Insights", layout="wide", page_icon= r"images\exploratory-analysis.png")
 ################################
 def load_image(image_path):
     try:
