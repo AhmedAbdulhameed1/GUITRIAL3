@@ -12,7 +12,7 @@ import os
 ###############################
 BASE_DIR = os.path.dirname(__file__)  # Current directory where Bandass.py exists
 IMAGE_DIR = os.path.join(BASE_DIR, "images")  # Set the path to the images directory
-ANALYSIS_IMAGE_DIR = os.path.join(BASE_DIR, "analysis_images")  # Set the path to the images directory
+ANALYSIS_IMAGE_DIR = os.path.join(r"E:\\DEPI_TRAFFIC_PROJECT\\final\\DEPI_GP\\GUI\\analysis_images")  # Set the path to the images directory
 
 ################################
 # Main app structure
