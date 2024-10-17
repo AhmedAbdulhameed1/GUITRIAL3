@@ -11,12 +11,12 @@ from nbconvert import PythonExporter
 import pickle
 import os
 ###############################
-BASE_DIR = os.path.dirname(__file__)  # Current directory where Bandass.py exists
-IMAGE_DIR = os.path.join(BASE_DIR, "images")  # Set the path to the images directory
+HOME_BASE_DIR = os.path.dirname(__file__)  # Current directory where Bandass.py exists
+HOME_IMAGE_DIR = os.path.join(HOME_BASE_DIR, "home_images")  # Set the path to the images directory
 
 ################################
 # Main app structure
-st.set_page_config(page_title="Bandaas", layout="wide", page_icon= r"GUI\images\accident-car.png")
+st.set_page_config(page_title="Bandaas", layout="wide", page_icon= r"GUI/images/accident-car.png")
 
 @st.cache_resource
 def load_image(image_path):
@@ -31,7 +31,7 @@ def load_image(image_path):
 @st.cache_resource
 def page_image_display():
     st.title("LOOK OUT!!!")
-    image = load_image(os.path.join(IMAGE_DIR, "two_cars.png"))  # Load the image
+    image = load_image(os.path.join(HOME_IMAGE_DIR, "two_cars.png"))  # Load the image
     if image is not None:  # Check if the image loaded successfully
         st.image(image, caption="We are a collaborative Team!")
 
