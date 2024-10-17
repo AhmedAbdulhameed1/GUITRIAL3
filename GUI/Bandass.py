@@ -12,11 +12,11 @@ import pickle
 import os
 ###############################
 HOME_BASE_DIR = os.path.dirname(__file__)  # Current directory where Bandass.py exists
-HOME_IMAGE_DIR = os.path.join(HOME_BASE_DIR, "home_image")  # Set the path to the images directory
+HOME_IMAGE_DIR = os.path.join(HOME_BASE_DIR, "home_images")  # Set the path to the images directory
 
 ################################
 # Main app structure
-st.set_page_config(page_title="Bandaas", layout="wide", page_icon= r"GUI/home_image/accident-car.png")
+st.set_page_config(page_title="Bandaas", layout="wide", page_icon= r"GUI/home_images/accident-car.png")
 
 @st.cache_resource
 def load_image(image_path):
